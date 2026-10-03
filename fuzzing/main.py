@@ -10,10 +10,9 @@ from CoverageMutationFuzzer import CoverageMutationFuzzer
 from GrammarFuzzer import GrammarFuzzer
 from analytics import analyze_all
 
-NUM_TRIALS = 2000
+NUM_TRIALS = 20000
 
-# TODO: Votre matricule
-RANDOM_SEED = 2301401
+RANDOM_SEED = 32143259453
 
 MAX_DUPLICATES = 5
 
@@ -37,25 +36,23 @@ def part1():
 
 def part2():
     runner = ParseJsonRunner()
-    # random_fuzzer = RandomFuzzer()
+    random_fuzzer = RandomFuzzer()
     mutation_fuzzer = MutationFuzzer(seed=MUTATION_SEEDS)
-    # coverage_mutation_fuzzer = CoverageMutationFuzzer(seed=MUTATION_SEEDS)
+    coverage_mutation_fuzzer = CoverageMutationFuzzer(seed=MUTATION_SEEDS)
 
     return {
-        # "Random Fuzzer": random_fuzzer.runs(runner, NUM_TRIALS),
+        "Random Fuzzer": random_fuzzer.runs(runner, NUM_TRIALS),
         "Mutation Fuzzer": mutation_fuzzer.runs(runner, NUM_TRIALS),
-        # "Coverage Mutation Fuzzer": coverage_mutation_fuzzer.runs(runner, NUM_TRIALS)
+        "Coverage Mutation Fuzzer": coverage_mutation_fuzzer.runs(runner, NUM_TRIALS)
     }
 
 
 def part3():
     runner = ParseJsonRunner()
-    random_fuzzer = RandomFuzzer()
     mutation_fuzzer = MutationFuzzer(seed=MUTATION_SEEDS)
     grammar_fuzzer = GrammarFuzzer(min_nonterminals=0, max_nonterminals=100)
 
     return {
-        "Random Fuzzer": random_fuzzer.runs(runner, NUM_TRIALS),
         "Mutation Fuzzer": mutation_fuzzer.runs(runner, NUM_TRIALS),
         "Grammar Fuzzer": grammar_fuzzer.runs(runner, NUM_TRIALS)
     }
@@ -128,7 +125,7 @@ def show_testcases_by_fuzzer(data: dict[str, list[JsonParserExecution]]):
 if __name__ == "__main__":
     random.seed(RANDOM_SEED)
 
-    #data = part1()
+    # data = part1()
     data = part2()
     # data = part3()
     # data = part4()

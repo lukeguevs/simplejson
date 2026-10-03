@@ -42,7 +42,7 @@ class MutationFuzzer(BaseFuzzer):
     def mutate(self, inp: str) -> str:
         """Apply a random mutation to the JSON input string"""
 
-        # TODO: Add your mutations here
+        # TODO: Add your mutation here
         mutators = [
             self.mutation1,
             self.mutation2,
@@ -52,7 +52,7 @@ class MutationFuzzer(BaseFuzzer):
         mutator = random.choice(mutators)
         return mutator(inp)
 
-    # TODO: Delete and create your own
+    # TODO: Q2.6:
     # def example_mutation(self, inp: str) -> str:
     #     """Example of mutation definition"""
     #     return inp + "a"
