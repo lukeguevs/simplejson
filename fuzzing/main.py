@@ -1,8 +1,6 @@
 import random
 from typing import FrozenSet
 
-from fuzzingbook.Coverage import Location
-
 from ParseJsonRunner import ParseJsonRunner, JsonParserExecution
 from MutationFuzzer import MutationFuzzer
 from RandomFuzzer import RandomFuzzer
