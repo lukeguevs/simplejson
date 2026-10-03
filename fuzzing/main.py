@@ -37,14 +37,14 @@ def part1():
 
 def part2():
     runner = ParseJsonRunner()
-    random_fuzzer = RandomFuzzer()
+    # random_fuzzer = RandomFuzzer()
     mutation_fuzzer = MutationFuzzer(seed=MUTATION_SEEDS)
-    coverage_mutation_fuzzer = CoverageMutationFuzzer(seed=MUTATION_SEEDS)
+    # coverage_mutation_fuzzer = CoverageMutationFuzzer(seed=MUTATION_SEEDS)
 
     return {
-        "Random Fuzzer": random_fuzzer.runs(runner, NUM_TRIALS),
+        # "Random Fuzzer": random_fuzzer.runs(runner, NUM_TRIALS),
         "Mutation Fuzzer": mutation_fuzzer.runs(runner, NUM_TRIALS),
-        "Coverage Mutation Fuzzer": coverage_mutation_fuzzer.runs(runner, NUM_TRIALS)
+        # "Coverage Mutation Fuzzer": coverage_mutation_fuzzer.runs(runner, NUM_TRIALS)
     }
 
 
