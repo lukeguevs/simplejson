@@ -56,20 +56,6 @@ def part3():
     }
 
 
-def part4():
-    runner = ParseJsonRunner()
-    random_fuzzer = RandomFuzzer()
-    mutation_fuzzer = MutationFuzzer(seed=MUTATION_SEEDS)
-    coverage_mutation_fuzzer = CoverageMutationFuzzer(seed=MUTATION_SEEDS)
-    grammar_fuzzer = GrammarFuzzer(min_nonterminals=0, max_nonterminals=100)
-
-    # TODO: Choose which fuzzers to use
-    return {
-        "Mutation Fuzzer": mutation_fuzzer.runs(runner, NUM_TRIALS),
-        "Grammar Fuzzer": grammar_fuzzer.runs(runner, NUM_TRIALS)
-    }
-
-
 def produce_testcases(runs: list[JsonParserExecution]) -> dict[FrozenSet[Location], list[JsonParserExecution]]:
     """Produce a dictionary of test cases for each unique coverage obtained"""
     test_cases: dict[FrozenSet[Location], list[JsonParserExecution]] = {}
