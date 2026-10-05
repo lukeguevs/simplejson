@@ -9,10 +9,11 @@ from CoverageMutationFuzzer import CoverageMutationFuzzer
 from GrammarFuzzer import GrammarFuzzer
 from analytics import analyze_all
 
-NUM_TRIALS = 20000
+#TODO: Modifier le NUM_TRIALS
+NUM_TRIALS = 1
 
 
-#Todo: mettre votre matricule
+#TODO: mettre votre matricule
 RANDOM_SEED = 32143259453
 
 MAX_DUPLICATES = 5
