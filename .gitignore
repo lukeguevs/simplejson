@@ -13,3 +13,4 @@
 /dist
 /docs
 /tsan_report.txt
+/venv
